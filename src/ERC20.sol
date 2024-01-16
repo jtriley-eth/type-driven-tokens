@@ -3,8 +3,10 @@ pragma solidity 0.8.22;
 
 import { Allowances } from "./types/Allowances.sol";
 import { Balances } from "./types/Balances.sol";
+import { TotalSupply } from "./types/TotalSupply.sol";
 
 struct ERC20Store {
+    TotalSupply totalSupply;
     Balances balances;
     Allowances allowances;
 }
@@ -14,6 +16,10 @@ contract ERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
     ERC20Store internal self;
+
+    function totalSupply() public view returns (uint256) {
+        return self.totalSupply.read();
+    }
 
     function balanceOf(address account) public view returns (uint256) {
         return self.balances.read(account);
