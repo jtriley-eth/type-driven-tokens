@@ -181,7 +181,7 @@ contract C {
     }
 
     function setItem(uint256 newItem) external {
-        self.item.set(newItem);
+        self.item.set(newItem * 2);
     }
 }
 ```
