@@ -143,7 +143,7 @@ struct Map {
     mapping(address => uint256) inner;
 }
 
-using { entry } for Map global;
+using {entry} for Map global;
 
 function entry(Map storage self, address acct) view returns (uint256) {
     return self.inner[acct];
@@ -153,7 +153,7 @@ struct Item {
     uint256 inner;
 }
 
-using { get, set } for Item global;
+using {get, set} for Item global;
 
 function set(Item storage self, uint256 item) returns (Item storage) {
     self.inner = item;
