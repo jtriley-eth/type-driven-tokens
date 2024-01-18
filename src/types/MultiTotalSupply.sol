@@ -13,17 +13,29 @@ function read(MultiTotalSupply storage self, uint256 id) view returns (uint256) 
     return self._inner[id].read();
 }
 
-function write(MultiTotalSupply storage self, uint256 id, uint256 amount) returns (MultiTotalSupply storage) {
+function write(
+    MultiTotalSupply storage self,
+    uint256 id,
+    uint256 amount
+) returns (MultiTotalSupply storage) {
     self._inner[id].write(amount);
     return self;
 }
 
-function increase(MultiTotalSupply storage self, uint256 id, uint256 amount) returns (MultiTotalSupply storage) {
+function increase(
+    MultiTotalSupply storage self,
+    uint256 id,
+    uint256 amount
+) returns (MultiTotalSupply storage) {
     self._inner[id].increase(amount);
     return self;
 }
 
-function decrease(MultiTotalSupply storage self, uint256 id, uint256 amount) returns (MultiTotalSupply storage) {
+function decrease(
+    MultiTotalSupply storage self,
+    uint256 id,
+    uint256 amount
+) returns (MultiTotalSupply storage) {
     self._inner[id].decrease(amount);
     return self;
 }
