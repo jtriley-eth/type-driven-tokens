@@ -64,7 +64,7 @@ function transferFrom(
     address receiver,
     uint256 amount
 ) returns (Token storage) {
-    if (spender != sender) self.allowances.decrease(spender, sender, amount);
+    if (spender != sender) self.allowances.decrease(sender, spender, amount);
     self.balances.decrease(sender, amount);
     self.balances.increase(receiver, amount);
     return self;
