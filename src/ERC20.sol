@@ -10,7 +10,7 @@ contract ERC20 {
     Token internal self;
 
     function totalSupply() public view returns (uint256) {
-        return self.totalSupply.read();
+        return self.totalSupply();
     }
 
     function balanceOf(address account) public view returns (uint256) {
