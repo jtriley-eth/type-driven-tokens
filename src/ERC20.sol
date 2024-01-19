@@ -27,11 +27,7 @@ contract ERC20 {
         return true;
     }
 
-    function transferFrom(
-        address sender,
-        address receiver,
-        uint256 amount
-    ) public returns (bool) {
+    function transferFrom(address sender, address receiver, uint256 amount) public returns (bool) {
         self.transferFrom(msg.sender, sender, receiver, amount);
         emit Transfer(sender, receiver, amount);
         return true;
