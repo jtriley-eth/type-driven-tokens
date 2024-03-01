@@ -15,31 +15,31 @@ contract ERC20 {
         }
     }
 
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() external view returns (uint256) {
         return self().totalSupply();
     }
 
-    function balanceOf(address account) public view returns (uint256) {
+    function balanceOf(address account) external view returns (uint256) {
         return self().balances.read(account);
     }
 
-    function allowance(address owner, address spender) public view returns (uint256) {
+    function allowance(address owner, address spender) external view returns (uint256) {
         return self().allowances.read(owner, spender);
     }
 
-    function transfer(address receiver, uint256 amount) public returns (bool) {
+    function transfer(address receiver, uint256 amount) external returns (bool) {
         self().transfer(msg.sender, receiver, amount);
         emit Transfer(msg.sender, receiver, amount);
         return true;
     }
 
-    function transferFrom(address sender, address receiver, uint256 amount) public returns (bool) {
+    function transferFrom(address sender, address receiver, uint256 amount) external returns (bool) {
         self().transferFrom(msg.sender, sender, receiver, amount);
         emit Transfer(sender, receiver, amount);
         return true;
     }
 
-    function approve(address spender, uint256 amount) public returns (bool) {
+    function approve(address spender, uint256 amount) external returns (bool) {
         self().approve(msg.sender, spender, amount);
         emit Approval(msg.sender, spender, amount);
         return true;
